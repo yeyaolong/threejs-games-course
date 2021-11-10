@@ -20,10 +20,27 @@
 <body>
     <script>
         const npcs = [];
-        // for ( let i = 0 ;)
-        npcs.push(createNPC());
-        npcs.push(createNPC());
-        npcs.push(createNPC());
+        // for (let i = 0; i < 10; i++) {
+        //     npcs.push(createNPC());
+        // }
+
+        let i = 0;
+        while (i < 10) {
+            npcs.push(createNPC());
+            i++;
+        }
+        let npc0 = npcs[0];
+        console.log('npc0的属性包含以下内容：')
+        for (let prop in npc0) {
+            console.log(`${prop}: ${npc0[prop]}`);
+        }
+
+        i = 0;
+        npcs.forEach(npc => {
+            console.log("NPC no." + i + " uses a " + npc.weapon + ' as its chosen weapon.');
+            i++;
+        });
+
 
         function createNPC() {
             const weapons = ["sword", "pistol", "axe", "spear"];
